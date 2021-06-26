@@ -1,8 +1,8 @@
 create table assets
 (
-    id            numeric,
+    id            serial,
     name          varchar,
     serial_number varchar,
-    asset_info    jsonb,
+    specifications    jsonb,
     PRIMARY KEY (id)
 );
