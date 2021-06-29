@@ -1,5 +1,5 @@
-insert into assets (name, serial_number, specifications)
-values ('keyboard', '19467001725', '{
+insert into assets (name, brand, serial_number, specifications)
+values ('keyboard', 'Logitech', '19467001725', '{
   "brand": "Logitech",
   "numberOfButtons": 1,
   "keyboardDescription": "Multi Functional",
@@ -27,7 +27,7 @@ values ('keyboard', '19467001725', '{
   "countryOfOrigin": "China",
   "itemWeight": "408 g"
 }'),
-       ('keyboard', '18463001221', '{
+       ('keyboard', 'Logitech', '18463001221', '{
          "brand": "Logitech",
          "model": "920-006342",
          "modelYear": "2014",
@@ -50,7 +50,7 @@ values ('keyboard', '19467001725', '{
          "manufacturer": "Logitech",
          "itemWeight": "821 g"
        }'),
-       ('keyboard', '12411201332', '{
+       ('keyboard', 'Amkette', '12411201332', '{
          "brand": "Amkette",
          "colour": "Black",
          "itemHeight": "4.02 Centimeters",
@@ -67,7 +67,7 @@ values ('keyboard', '19467001725', '{
          "countryOfOrigin": "China",
          "itemWeight": "625 g"
        }'),
-       ('monitor', '184619467121', '{
+       ('monitor', 'LG', '184619467121', '{
          "model": "32QN600",
          "modelName": "IPS Monitor",
          "productDimensions": "20.9 x 71.4 x 51.2 cm; 7.2 Kilograms",
@@ -90,7 +90,7 @@ values ('keyboard', '19467001725', '{
          "importedBy": "LG Electronics India Pvt Ltd",
          "itemWeight": "7 kg 200 g"
        }'),
-       ('monitor', '124113427321', '{
+       ('monitor', 'Acer','124113427321', '{
          "brand": "Acer",
          "manufacturer": "Acer India Pvt Ltd",
          "model": "ET322QK",
@@ -125,7 +125,7 @@ values ('keyboard', '19467001725', '{
          "importedBy": "ACER INDIA PRIVATE LIMITED Embassy Heights, 6th Floor, No. 13 Magrath Road, Next to HOSMAT Hospital, Bangalore, INDIA – 560030",
          "itemWeight": "5 kg 620 g"
        }'),
-       ('laptop', '112113427331', '{
+       ('laptop', 'HP','112113427331', '{
          "series": "Pavilion x360",
          "colour": "Mineral Silver",
          "itemHeight": "2.1 Centimeters",
@@ -172,7 +172,7 @@ values ('keyboard', '19467001725', '{
          "importedBy": "HP India Sales Pvt. Ltd.",
          "itemWeight": "1 kg 580 g"
        }'),
-       ('laptop', '1023134376434', '{
+       ('laptop', 'Dell','1023134376434', '{
          "brand": "Dell",
          "manufacturer": "Dell India Pvt Ltd, Dell",
          "series": "Inspiron",
@@ -224,7 +224,7 @@ values ('keyboard', '19467001725', '{
          "importedBy": "Dell",
          "itemWeight": "1 kg 700 g"
        }'),
-       ('mouse', '3021331376231', '{
+       ('mouse', 'Dell','3021331376231', '{
          "brand": "Dell",
          "itemHeight": "14.2 Centimeters",
          "itemWidth": "46 Millimeters",
@@ -233,7 +233,7 @@ values ('keyboard', '19467001725', '{
          "countryOfOrigin": "India",
          "itemWeight": "140 g"
        }'),
-       ('mouse', '20131241316231', '
+       ('mouse', 'Logitech','20131241316231', '
        {
          "brand": "Logitech",
          "manufacturer": "Logitech",
@@ -251,7 +251,7 @@ values ('keyboard', '19467001725', '{
          "countryOfOrigin": "China",
          "itemWeight": "68 g"
        }'),
-       ('ups', '1033123126231', '{
+       ('ups', 'APC','1033123126231', '{
          "brand": "APC",
          "manufacturer": "APC",
          "model": "BX600C-IN",
