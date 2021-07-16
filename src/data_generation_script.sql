@@ -12,6 +12,7 @@ $BODY$
 DECLARE
     _i             int := 0;
     _randomNumber  decimal;
+    _price         decimal;
     _serial_number int;
     _color         varchar;
     _software      varchar;
@@ -28,12 +29,16 @@ BEGIN
             SELECT random() * 1000 INTO _randomNumber;
 
             if _randomNumber > 950 and _randomNumber < 1000 then
+
+                SELECT random() * (1000 - 900) + 900 into _price;
+
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('keyboard', 'Logitech', _serial_number, '{
+                VALUES ('keyboard', 'Logitech', _serial_number, concat('{
                   "brand": "Logitech",
                   "numberOfButtons": 1,
                   "keyboardDescription": "Multi Functional",
                   "numberOfKeys": 1,
+                  "price": ', _price, ',
                   "model": "920-007558",
                   "modelName": "K380",
                   "modelYear": "2015",
@@ -56,14 +61,16 @@ BEGIN
                   "manufacturer": "Logitech",
                   "countryOfOrigin": "China",
                   "itemWeight": "408 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
             if _randomNumber > 900 and _randomNumber < 950 then
+                SELECT random() * (1500 - 1200) + 1200 into _price;
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('keyboard', 'HP', _serial_number, '{
+                VALUES ('keyboard', 'HP', _serial_number, concat('{
                   "brand": "HP",
                   "model": "100",
+                  "price": ', _price, ',
                   "productDimensions": "45 x 14.8 x 2.5 cm; 490 Grams",
                   "itemModelNumber": "100",
                   "specialFeatures": "USB Compatibility",
@@ -78,15 +85,17 @@ BEGIN
                   "manufacturer": "hp",
                   "importedBy": "HP India Sales Private Limited, 24 Salarpuria Arena,Hosur Main Road, Audgodi, Bangalore",
                   "itemWeight": "490 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
             if _randomNumber > 800 and _randomNumber < 900 then
+                SELECT random() * (1800 - 1700) + 1700 into _price;
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('keyboard', 'Logitech', _serial_number, '{
+                VALUES ('keyboard', 'Logitech', _serial_number, concat('{
                   "brand": "Logitech",
                   "model": "920-006342",
                   "modelYear": "2014",
+                  "price": ', _price, ',
                   "productDimensions": "30.99 x 4.09 x 20.1 cm; 821 Grams",
                   "batteries": "1 Lithium Polymer batteries required. (included)",
                   "itemModelNumber": "920-006342",
@@ -105,30 +114,34 @@ BEGIN
                   "programmableButtons": "No",
                   "manufacturer": "Logitech",
                   "itemWeight": "821 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
 
             if _randomNumber > 700 and _randomNumber < 800 then
+                SELECT random() * (700 - 600) + 600 into _price;
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('mouse', 'Dell', _serial_number, '{
+                VALUES ('mouse', 'Dell', _serial_number, concat('{
                   "brand": "Dell",
+                  "price": ', _price, ',
                   "itemHeight": "14.2 Centimeters",
                   "itemWidth": "46 Millimeters",
                   "productDimensions": "9.1 x 4.6 x 14.2 cm; 140 Grams",
                   "manufacturer": "Dell Computers",
                   "countryOfOrigin": "India",
                   "itemWeight": "140 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
             if _randomNumber > 650 and _randomNumber < 700 then
+                SELECT random() * (900 - 800) + 800 into _price;
                 select (array ['Black', 'White', 'Navy Blue'])[floor(random() * 3 + 1)] into _color;
                 INSERT INTO assets(name, brand, serial_number, specifications)
                 VALUES ('mouse', 'Logitech', _serial_number, concat('{
                   "brand": "Logitech",
                   "manufacturer": "Logitech",
                   "colour": "', _color, '",
+                  "price": ', _price, ',
                   "itemHeight": "35 Millimeters",
                   "itemWidth": "6.2 Centimeters",
                   "productDimensions": "9.8 x 6.2 x 3.5 cm; 68 Grams",
@@ -145,11 +158,13 @@ BEGIN
             end if;
 
             if _randomNumber > 600 and _randomNumber < 650 then
+                SELECT random() * (2500 - 2300) + 2300 into _price;
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('headphones', 'BoAt', _serial_number, '{
+                VALUES ('headphones', 'BoAt', _serial_number, concat('{
                   "brand": "BoAt",
                   "model": "Rockerz 450",
                   "modelName": "Rockerz 450",
+                  "price": ', _price, ',
                   "productDimensions": "8 x 18.2 x 17.6 cm; 168 Grams",
                   "batteries": "1 Lithium ion batteries required. (included)",
                   "itemModelNumber": "Rockerz 450",
@@ -167,16 +182,19 @@ BEGIN
                   "manufacturer": "Imagine Marketing Pvt Ltd",
                   "countryOfOrigin": "China",
                   "itemWeight": "168 g"
-                }');
+                }')::jsonb);
             end if;
 
             if _randomNumber > 500 and _randomNumber < 600 then
+                SELECT random() * (30000 - 28000) + 28000 into _price;
+
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('monitor', 'LG', _serial_number, '{
+                VALUES ('monitor', 'LG', _serial_number, concat('{
                   "model": "32QN600",
                   "modelName": "IPS Monitor",
                   "productDimensions": "20.9 x 71.4 x 51.2 cm; 7.2 Kilograms",
                   "itemModelNumber": "32QN600",
+                  "price": ', _price, ',
                   "hardwareInterface": "DisplayPort, HDMI",
                   "responseTime": "5 Milliseconds",
                   "specialFeatures": "Anti Glare Screen, QHD (2560 x 1440) Resolution with HDR 10, Blue Light Filter, Wall Mountable, Thin Bezel, Tilt Adjustment, Flicker-Free",
@@ -194,15 +212,17 @@ BEGIN
                   "countryOfOrigin": "China",
                   "importedBy": "LG Electronics India Pvt Ltd",
                   "itemWeight": "7 kg 200 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
             if _randomNumber > 400 and _randomNumber < 500 then
+                SELECT random() * (25000 - 23000) + 23000 into _price;
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('monitor', 'Acer', _serial_number, '{
+                VALUES ('monitor', 'Acer', _serial_number, concat('{
                   "brand": "Acer",
                   "manufacturer": "Acer India Pvt Ltd",
                   "model": "ET322QK",
+                  "price": ', _price, ',
                   "modelYear": "2018",
                   "productDimensions": "24.64 x 72.9 x 52.83 cm; 5.62 Kilograms",
                   "itemModelNumber": "ET322QK",
@@ -233,14 +253,16 @@ BEGIN
                   "countryOfOrigin": "China",
                   "importedBy": "ACER INDIA PRIVATE LIMITED Embassy Heights, 6th Floor, No. 13 Magrath Road, Next to HOSMAT Hospital, Bangalore, INDIA – 560030",
                   "itemWeight": "5 kg 620 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
             if _randomNumber > 350 and _randomNumber < 400 then
+                SELECT random() * (7000 - 6000) + 6000 into _price;
                 INSERT INTO assets(name, brand, serial_number, specifications)
-                VALUES ('ups', 'APC', _serial_number, '{
+                VALUES ('ups', 'APC', _serial_number, concat('{
                   "brand": "APC",
                   "manufacturer": "APC",
+                  "price": ', _price, ',
                   "model": "BX600C-IN",
                   "modelName": "BX600C-IN",
                   "productDimensions": "23.7 x 10.7 x 21.8 cm; 4.69 Kilograms",
@@ -261,10 +283,11 @@ BEGIN
                   "programmableButtons": "No",
                   "countryOfOrigin": "India",
                   "itemWeight": "4 kg 690 g"
-                }'::jsonb);
+                }')::jsonb);
             end if;
 
             if _randomNumber > 325 and _randomNumber < 350 then
+                SELECT random() * (1000 - 900) + 900 into _price;
                 select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
                 into _color;
                 INSERT INTO assets(name, brand, serial_number, specifications)
@@ -272,6 +295,7 @@ BEGIN
                   "brand": "WildCraft",
                   "series": "WildCraft Polyester Laptop Sleeve Cover Bag 15.6 inch For MacBook / Lenovo / Dell / Surface Pro / Asus / HP / Acer ( Grey_L22, 180 Degree opening)",
                   "colour": "', _color, '",
+                  "price": ', _price, ',
                   "itemHeight": "16 Inches",
                   "itemWidth": "1.2 Inches",
                   "productDimensions": "27.94 x 3.05 x 40.64 cm; 200 Grams",
@@ -285,6 +309,7 @@ BEGIN
 
 
             if _randomNumber > 300 and _randomNumber < 325 then
+                SELECT random() * (1300 - 1100) + 1100 into _price;
                 select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
                 into _color;
                 INSERT INTO assets(name, brand, serial_number, specifications)
@@ -293,6 +318,7 @@ BEGIN
                           "manufacturer": "Dell Computers",
                           "series": "DELL",
                           "colour": "', _color, '",
+                          "price": ', _price, ',
                           "itemHeight": "10 Centimeters",
                           "itemWidth": "3 Centimeters",
                           "productDimensions": "5 x 3 x 10 cm; 200 Grams",
@@ -306,14 +332,14 @@ BEGIN
             end if;
 
             if _randomNumber > 200 and _randomNumber < 300 then
+                SELECT random() * (35000 - 33000) + 33000 into _price;
                 select (array ['4', '8', '16'])[floor(random() * 3 + 1)] into _ram;
                 select (array ['512 GB', '1 TB', '2 TB'])[floor(random() * 3 + 1)] into _hdd_size;
-                select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
+                select (array ['Mineral Silver', 'Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 6 + 1)]
                 into _color;
                 INSERT INTO assets(name, brand, serial_number, specifications)
                 VALUES ('laptop', 'HP', _serial_number, concat('{
                   "series": "Pavilion x360",
-                  "colour": "Mineral Silver",
                   "itemHeight": "2.1 Centimeters",
                   "itemWidth": "22.3 Centimeters",
                   "standingScreenDisplaySize": "14 Inches",
@@ -325,9 +351,10 @@ BEGIN
                   "processorType": "Core i3",
                   "processorSpeed": "2.1 GHz",
                   "processorCount": "1",
-                  "color": "', _color, '",
+                  "colour": "', _color, '",
                   "ramSizeInGB": "', _ram, '",
                   "hardDriveSize": "', _hdd_size, '",
+                  "price": ', _price, ',
                   "memoryTechnology": "DDR4",
                   "computerMemoryType": "DDR4 SDRAM",
                   "maximumMemorySupported": "16 GB",
@@ -364,6 +391,7 @@ BEGIN
 
 
             if _randomNumber > 100 and _randomNumber < 200 then
+                SELECT random() * (40000 - 37000) + 37000 into _price;
                 select (array ['512 GB', '1 TB', '2 TB'])[floor(random() * 3 + 1)] into _hdd_size;
                 select (array ['4', '8', '16'])[floor(random() * 3 + 1)] into _ram;
                 select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
@@ -388,6 +416,7 @@ BEGIN
                   "processorCount": "1",
                   "ramSizeInGB": "', _ram, '",
                   "hardDriveSize": "', _hdd_size, '",
+                  "price": ', _price, ',
                   "memoryTechnology": "DDR4",
                   "maximumMemorySupported": "16 GB",
                   "memoryClockSpeed": "2666 MHz",
@@ -424,11 +453,13 @@ BEGIN
             end if;
 
             if _randomNumber > 50 and _randomNumber < 100 then
+                SELECT random() * (11000 - 1000) + 1000 into _price;
                 select (array ['Black', 'White', 'Navy Blue'])[floor(random() * 3 + 1)] into _color;
                 INSERT INTO assets(name, brand, serial_number, specifications)
                 VALUES ('keyboard', 'Amkette', _serial_number, concat('{
                   "brand": "Amkette",
                   "colour": "', _color, '",
+                  "price": ', _price, ',
                   "itemHeight": "4.02 Centimeters",
                   "itemWidth": "13 Centimeters",
                   "productDimensions": "52 x 13 x 4.02 cm; 625 Grams",
@@ -446,6 +477,7 @@ BEGIN
             end if;
 
             if _randomNumber > 0 and _randomNumber < 50 then
+                SELECT random() * (1500 - 1400) + 1400 into _price;
                 select ((now() + concat(floor(random() * (3 - 0 + 1)) + 0, ' year')::interval) +
                         (concat(floor(random() * (12 - 1 + 1)) + 1, ' month')::interval) +
                         (concat(floor(random() * (30 - 1 + 1)) + 1, ' day')::interval))::date
@@ -456,7 +488,8 @@ BEGIN
                 VALUES ('Software', 'Jetbrains', _serial_number, concat('{
                   "product": "', _software, '",
                   "licenseKey": "', _license_key, '",
-                  "expiryDate": "', _date, '"
+                  "expiryDate": "', _date, '",
+                  "price": ', _price, '
                 }')::jsonb);
             end if;
 
