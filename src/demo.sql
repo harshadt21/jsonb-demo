@@ -117,8 +117,7 @@ explain analyse select * from assets where specifications -> 'colour' ? 'White';
 explain analyse select * from assets where specifications ? 'colour';
 
 create index idx_expression on assets using gin((specifications -> 'colour'));
-drop index idx_ram;
-
+drop index idx_expression;
 
 
 
@@ -129,9 +128,9 @@ drop index idx_ram;
 explain analyze select * from assets where specifications @> '{"colour":"White"}'::jsonb;
 select * from assets where specifications @> '{"colour":"White"}'::jsonb;
 
-create index idx_specifications_1 on assets using gin(specifications JSONB_PATH_OPS);
+create index idx_specifications_jsonbpathops on assets using gin(specifications JSONB_PATH_OPS);
 
 explain analyze select * from assets where specifications @> '{"colour":"White"}'::jsonb;
 select * from assets where specifications @> '{"colour":"White"}'::jsonb;
 
-drop index idx_specifications_1;
+drop index idx_specifications_jsonbpathops;
