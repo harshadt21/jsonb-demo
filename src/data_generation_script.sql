@@ -32,7 +32,7 @@ BEGIN
 
                 SELECT random() * (1000 - 900) + 900 into _price;
 
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('keyboard', 'Logitech', _serial_number, concat('{
                   "brand": "Logitech",
                   "numberOfButtons": 1,
@@ -66,7 +66,7 @@ BEGIN
 
             if _randomNumber > 900 and _randomNumber < 950 then
                 SELECT random() * (1500 - 1200) + 1200 into _price;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('keyboard', 'HP', _serial_number, concat('{
                   "brand": "HP",
                   "model": "100",
@@ -90,7 +90,7 @@ BEGIN
 
             if _randomNumber > 800 and _randomNumber < 900 then
                 SELECT random() * (1800 - 1700) + 1700 into _price;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('keyboard', 'Logitech', _serial_number, concat('{
                   "brand": "Logitech",
                   "model": "920-006342",
@@ -120,7 +120,7 @@ BEGIN
 
             if _randomNumber > 700 and _randomNumber < 800 then
                 SELECT random() * (700 - 600) + 600 into _price;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('mouse', 'Dell', _serial_number, concat('{
                   "brand": "Dell",
                   "price": ', _price, ',
@@ -136,7 +136,7 @@ BEGIN
             if _randomNumber > 650 and _randomNumber < 700 then
                 SELECT random() * (900 - 800) + 800 into _price;
                 select (array ['Black', 'White', 'Navy Blue'])[floor(random() * 3 + 1)] into _color;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('mouse', 'Logitech', _serial_number, concat('{
                   "brand": "Logitech",
                   "manufacturer": "Logitech",
@@ -159,7 +159,7 @@ BEGIN
 
             if _randomNumber > 600 and _randomNumber < 650 then
                 SELECT random() * (2500 - 2300) + 2300 into _price;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('headphones', 'BoAt', _serial_number, concat('{
                   "brand": "BoAt",
                   "model": "Rockerz 450",
@@ -188,7 +188,7 @@ BEGIN
             if _randomNumber > 500 and _randomNumber < 600 then
                 SELECT random() * (30000 - 28000) + 28000 into _price;
 
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('monitor', 'LG', _serial_number, concat('{
                   "model": "32QN600",
                   "modelName": "IPS Monitor",
@@ -217,7 +217,7 @@ BEGIN
 
             if _randomNumber > 400 and _randomNumber < 500 then
                 SELECT random() * (25000 - 23000) + 23000 into _price;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('monitor', 'Acer', _serial_number, concat('{
                   "brand": "Acer",
                   "manufacturer": "Acer India Pvt Ltd",
@@ -258,7 +258,7 @@ BEGIN
 
             if _randomNumber > 350 and _randomNumber < 400 then
                 SELECT random() * (7000 - 6000) + 6000 into _price;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('ups', 'APC', _serial_number, concat('{
                   "brand": "APC",
                   "manufacturer": "APC",
@@ -290,7 +290,7 @@ BEGIN
                 SELECT random() * (1000 - 900) + 900 into _price;
                 select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
                 into _color;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('Laptop Bag', 'WildCraft', _serial_number, concat('{
                   "brand": "WildCraft",
                   "series": "WildCraft Polyester Laptop Sleeve Cover Bag 15.6 inch For MacBook / Lenovo / Dell / Surface Pro / Asus / HP / Acer ( Grey_L22, 180 Degree opening)",
@@ -312,7 +312,7 @@ BEGIN
                 SELECT random() * (1300 - 1100) + 1100 into _price;
                 select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
                 into _color;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('Laptop Bag', 'Dell', _serial_number, concat('{
                           "brand": "Dell",
                           "manufacturer": "Dell Computers",
@@ -337,7 +337,7 @@ BEGIN
                 select (array ['512 GB', '1 TB', '2 TB'])[floor(random() * 3 + 1)] into _hdd_size;
                 select (array ['Mineral Silver', 'Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 6 + 1)]
                 into _color;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('laptop', 'HP', _serial_number, concat('{
                   "series": "Pavilion x360",
                   "itemHeight": "2.1 Centimeters",
@@ -396,7 +396,7 @@ BEGIN
                 select (array ['4', '8', '16'])[floor(random() * 3 + 1)] into _ram;
                 select (array ['Black', 'White', 'Navy Blue', 'Silver', 'Sky Blue'])[floor(random() * 5 + 1)]
                 into _color;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('laptop', 'Dell', _serial_number, concat('{
                   "brand": "Dell",
                   "manufacturer": "Dell India Pvt Ltd, Dell",
@@ -455,7 +455,7 @@ BEGIN
             if _randomNumber > 50 and _randomNumber < 100 then
                 SELECT random() * (11000 - 1000) + 1000 into _price;
                 select (array ['Black', 'White', 'Navy Blue'])[floor(random() * 3 + 1)] into _color;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('keyboard', 'Amkette', _serial_number, concat('{
                   "brand": "Amkette",
                   "colour": "', _color, '",
@@ -484,7 +484,7 @@ BEGIN
                 into _date;
                 select uuid_generate_v4() into _license_key;
                 select (array ['Intellij IDEA', 'PyCharm', 'WebStorm'])[floor(random() * 3 + 1)] into _software;
-                INSERT INTO assets(name, brand, serial_number, specifications)
+                INSERT INTO assets_indexing_demo(name, brand, serial_number, specifications)
                 VALUES ('Software', 'Jetbrains', _serial_number, concat('{
                   "product": "', _software, '",
                   "licenseKey": "', _license_key, '",
@@ -499,10 +499,43 @@ BEGIN
 END;
 $BODY$;
 
--- select generate_data();
+select generate_data();
 
 -- select name, count(*) from assets group by name;
 
 -- select * from assets limit 200;
 
 -- truncate table assets;
+
+
+insert into assets (select * from assets_indexing_demo where name='keyboard' and brand='Logitech' limit 1)
+union
+(select * from assets_indexing_demo where name='keyboard' and brand='Logitech' limit 1)
+union
+(select * from assets_indexing_demo where name='keyboard' and brand='HP' limit 1)
+union
+(select * from assets_indexing_demo where name='mouse' and brand='Dell' limit 1)
+union
+(select * from assets_indexing_demo where name='mouse' and brand='Logitech' limit 1)
+union
+(select * from assets_indexing_demo where name='monitor' and brand='LG' limit 1)
+union
+(select * from assets_indexing_demo where name='monitor' and brand='ACER' limit 1)
+union
+(select * from assets_indexing_demo where name='headphones' and brand='BoAt' limit 1)
+union
+(select * from assets_indexing_demo where name='ups' and brand='APC' limit 1)
+union
+(select * from assets_indexing_demo where name='Laptop Bag' and brand='WildCraft' limit 1)
+union
+(select * from assets_indexing_demo where name='Laptop Bag' and brand='Dell' limit 1)
+union
+(select * from assets_indexing_demo where name='laptop' and brand='Dell' limit 1)
+union
+(select * from assets_indexing_demo where name='laptop' and brand='HP' limit 1)
+union
+(select * from assets_indexing_demo where name='keyboard' and brand='Amkette' limit 1)
+union
+(select * from assets_indexing_demo where name='Software' and brand='Jetbrains' limit 1);
+
+-- select * from assets;
