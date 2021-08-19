@@ -19,5 +19,3 @@ select * from assets where name='keyboard' and specifications @> '{"connectorTyp
 
 -- List all laptops which has ram greater than 8gb ->
 select * from assets where name='laptop' and (specifications ->> 'ramSizeInGB')::INTEGER > 8;
-
-

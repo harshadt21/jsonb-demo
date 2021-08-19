@@ -9,13 +9,6 @@ select * from assets;
 
 -- Fetch laptops with 16 gb ram using extraction operator, add multiple records
 select * from assets where (specifications ->> 'ramSizeInGB')::Integer = 16;
-
-
-
-
-
-
-
 -- Fetch assets with colour navy blue using extraction operator 
 select * from assets where specifications ->> 'colour' = 'Navy Blue';
 
@@ -63,15 +56,6 @@ where specifications ? 'ramSizeInGB';
 
 
 
--- Total amount invested in assets
+-- Aggregation operations
 select sum(cast(specifications ->> 'price' as decimal)) from assets;
-
-
-
-
-
-
-
--- Average price of a laptop in inventory
 select avg(cast(specifications ->> 'price' as decimal)) from assets where name='laptop';
-
